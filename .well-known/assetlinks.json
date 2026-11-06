@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.allancepeda_prog.twa",
+        "sha256_cert_fingerprints": ["F8:61:C2:C8:84:35:2B:77:99:DC:89:71:8E:EA:E0:AB:38:0C:3C:A0:AC:D2:CC:65:2B:13:DE:47:B4:7E:19:B7"]
+      }
+    }]
