@@ -117,6 +117,8 @@ nav.tabs .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
 table{border-collapse:collapse;width:100%;font-size:.85rem}
 th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
 th{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+table.wrap td:first-child,table.wrap th:first-child{white-space:normal}
+.sub{display:block;font-size:.75rem;color:var(--muted);white-space:normal;margin-top:2px}
 td.n{text-align:right;font-variant-numeric:tabular-nums}
 tr.click{cursor:pointer} tr.click:hover td{background:var(--surface-2)}
 .bar{height:10px;border-radius:99px;background:var(--surface-2);overflow:hidden}
@@ -168,7 +170,7 @@ tr.click{cursor:pointer} tr.click:hover td{background:var(--surface-2)}
 const RK_LOGO='data:image/png;base64,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';
 
 const CATS_G=["Alimentación","Material y kit","Talleristas","Reconocimientos","Transporte","Impresión y difusión","Otros"];
-const CATS_I=["Aporte AIBOR","Inscripciones","Ofrendas","Otros ingresos"];
+const CATS_I=["Aporte AIBOR","Reembolso AIBOR","Inscripciones","Ofrendas","Otros ingresos"];
 const DOCS=["Boleta","Voucher","Factura","Transferencia","Comprobante de egreso","Otro"];
 const MESES=["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
 const S={pin:"",me:"",acts:[],movs:[],cfg:{},carpeta:"",year:new Date().getFullYear(),tab:"boletas",act:null,fotos:{}};
@@ -207,9 +209,11 @@ async function reload(){try{apply(await call("getData",S.pin));render()}catch(e)
 /* ---------- derivados ---------- */
 function yearMovs(y=S.year){return S.movs.filter(m=>m.anio===y)}
 function actMovs(id){return S.movs.filter(m=>m.actividadId===id)}
-function actTotals(id){const ms=actMovs(id);let g=0,i=0,aibor=0,sinFoto=0;for(const m of ms){if(m.tipo==="ingreso"){i+=m.monto;if(m.concepto==="Aporte AIBOR")aibor+=m.monto}else{g+=m.monto;if(!m.fotoId&&!m.respaldoExterno)sinFoto++}}return{g,i,aibor,saldo:i-g,sinFoto,n:ms.length}}
+function actTotals(id){const ms=actMovs(id);let g=0,i=0,aporte=0,reemb=0,sinFoto=0;for(const m of ms){if(m.tipo==="ingreso"){i+=m.monto;if(m.concepto==="Aporte AIBOR")aporte+=m.monto;else if(m.concepto==="Reembolso AIBOR")reemb+=m.monto}else{g+=m.monto;if(!m.fotoId&&!m.respaldoExterno)sinFoto++}}
+  const aibor=aporte+reemb,propios=i-aibor,saldo=i-g,pend=Math.max(0,-saldo),devolver=Math.min(Math.max(0,saldo),aibor);
+  return{g,i,aporte,reemb,aibor,propios,saldo,pend,devolver,usoAibor:aibor+pend-devolver,sinFoto,n:ms.length}}
 function budget(y=S.year){return Number(S.cfg["presupuesto_"+y]||0)}
-function itemUsado(y=S.year){let u=0;for(const a of S.acts.filter(a=>a.anio===y)){const t=actTotals(a.id);u+=t.aibor+Math.max(0,-t.saldo)}return u}
+function itemUsado(y=S.year){return S.acts.filter(a=>a.anio===y).reduce((u,a)=>u+actTotals(a.id).usoAibor,0)}
 function estadoTxt(e){return{abierta:"En curso",enviada:"Rendición enviada",aprobada:"Aprobada"}[e]||"En curso"}
 
 /* ---------- vistas ---------- */
@@ -237,7 +241,7 @@ function boletasView(){
   h+=ms.length?`<div class="list">${ms.map(movRow).join("")}</div>`:`<div class="empty">Todavía no hay boletas en ${S.year}.<br>Toca <b>Boleta</b>, saca la foto y anota el monto.</div>`;
   return h
 }
-function actCard(a){const t=actTotals(a.id);return `<button class="act" type="button" data-act="${esc(a.id)}"><div class="h"><b>${esc(a.nombre)}</b><span class="chip ${esc(a.estado)}">${esc(estadoTxt(a.estado))}</span></div><div class="note">${fdate(a.fecha)} · ${t.n} movimientos ${t.sinFoto?`· <span class="chip nofoto">${t.sinFoto} sin respaldo</span>`:""}</div><div class="nums"><span>Gastos<b>${money(t.g)}</b></span><span>Ingresos<b>${money(t.i)}</b></span><span>Saldo<b class="${t.saldo<0?"neg":""}">${money(t.saldo)}</b></span></div></button>`}
+function actCard(a){const t=actTotals(a.id);return `<button class="act" type="button" data-act="${esc(a.id)}"><div class="h"><b>${esc(a.nombre)}</b><span class="chip ${esc(a.estado)}">${esc(estadoTxt(a.estado))}</span></div><div class="note">${fdate(a.fecha)} · ${t.n} movimientos ${t.sinFoto?`· <span class="chip nofoto">${t.sinFoto} sin respaldo</span>`:""}</div><div class="nums"><span>Gastos<b>${money(t.g)}</b></span><span>Ingresos propios<b>${money(t.propios)}</b></span><span>${t.pend?"Por reembolsar":"AIBOR usado"}<b class="${t.pend?"neg":""}">${money(t.pend||t.usoAibor)}</b></span></div></button>`}
 function actsView(){
   const as=S.acts.filter(a=>a.anio===S.year).sort((a,b)=>String(b.fecha).localeCompare(a.fecha));
   return `<div class="btns" style="justify-content:space-between;align-items:center"><h2 style="margin:0">Actividades ${S.year}</h2><button class="btn primary" type="button" id="newAct">Nueva actividad</button></div>`+(as.length?`<div class="list">${as.map(actCard).join("")}</div>`:`<div class="empty">No hay actividades en ${S.year}.</div>`)
@@ -248,8 +252,18 @@ function actDetail(id){
   return `<button class="back" type="button" id="back">← Actividades</button>
   <div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><h2 style="margin-top:0">${esc(a.nombre)}</h2><span class="chip ${esc(a.estado)}">${esc(estadoTxt(a.estado))}</span></div>
   <div class="note">${fdate(a.fecha)}${a.observacion?" · con observación para tesorería":""}</div>
-  <div class="kpis"><div class="kpi"><div class="l">Gastos</div><div class="v">${money(t.g)}</div></div><div class="kpi"><div class="l">Ingresos</div><div class="v">${money(t.i)}</div></div><div class="kpi"><div class="l">${t.saldo<0?"Saldo en contra":"Saldo a favor"}</div><div class="v ${t.saldo<0?"neg":"pos"}">${money(Math.abs(t.saldo))}</div></div></div>
-  ${t.saldo<0?`<p class="note">La AIBOR debe reembolsar ${money(-t.saldo)}.</p>`:""}
+  <div class="kpis"><div class="kpi"><div class="l">Gastos</div><div class="v">${money(t.g)}</div></div><div class="kpi"><div class="l">Ingresos propios</div><div class="v">${money(t.propios)}</div><div class="note">inscripciones, ofrendas</div></div><div class="kpi"><div class="l">Presupuesto AIBOR usado</div><div class="v">${money(t.usoAibor)}</div><div class="note">aporte + reembolso</div></div></div>
+  <h3>Cómo se financia</h3><div class="tbl-wrap"><table class="wrap"><tbody>
+   <tr><td>Gastos de la actividad</td><td class="n">${money(t.g)}</td></tr>
+   <tr><td>Menos ingresos propios (inscripciones, ofrendas)</td><td class="n">−${money(t.propios)}</td></tr>
+   <tr><th style="text-transform:none;letter-spacing:0;color:var(--fg);font-size:.85rem">A cubrir con presupuesto AIBOR</th><th class="n" style="color:var(--fg)">${money(Math.max(0,t.g-t.propios))}</th></tr>
+   <tr><td>Aporte AIBOR recibido</td><td class="n">${money(t.aporte)}</td></tr>
+   <tr><td>Reembolso AIBOR recibido</td><td class="n">${money(t.reemb)}</td></tr>
+   ${t.pend?`<tr><td><b class="neg">Por reembolsar (pedir a la AIBOR)</b></td><td class="n neg"><b>${money(t.pend)}</b></td></tr>`:""}
+   ${t.devolver?`<tr><td><b>Sobra del aporte AIBOR (devolver o informar)</b></td><td class="n"><b>${money(t.devolver)}</b></td></tr>`:""}
+   ${t.saldo>t.devolver?`<tr><td>Saldo a favor de la Red (ingresos propios)</td><td class="n pos">${money(t.saldo-t.devolver)}</td></tr>`:""}
+  </tbody></table></div>
+  ${t.pend?`<p class="note">Cuando la AIBOR pague, registra un ingreso con concepto <b>"Reembolso AIBOR"</b> por ${money(t.pend)}: así el pendiente queda en cero y el presupuesto se actualiza.</p>`:""}
   ${t.sinFoto?`<p class="note"><span class="chip nofoto">${t.sinFoto} gasto(s) sin respaldo</span> Agrega la foto o un comprobante de egreso antes de rendir.</p>`:""}
   <div class="btns"><button class="btn navy" type="button" id="genR">Generar rendición AIBOR (Excel + PDF)</button><button class="btn ghost" type="button" id="editAct">Editar actividad</button></div>
   <div id="genOut"></div>
@@ -263,15 +277,24 @@ function controlView(){
   const byC={};g.forEach(m=>byC[m.concepto||"Otros"]=(byC[m.concepto||"Otros"]||0)+m.monto);
   const pend={};g.filter(m=>m.pago==="propio"&&!m.reembolsado).forEach(m=>{const k=m.responsable||"Sin responsable";pend[k]=(pend[k]||0)+m.monto});const pe=Object.entries(pend);
   const as=S.acts.filter(a=>a.anio===S.year);
-  return `<h2>Control de gastos ${S.year}</h2><div class="kpis"><div class="kpi"><div class="l">Gastos del año</div><div class="v">${money(G)}</div></div><div class="kpi"><div class="l">Ingresos del año</div><div class="v pos">${money(I)}</div></div><div class="kpi"><div class="l">Balance</div><div class="v ${I-G<0?"neg":""}">${money(I-G)}</div></div></div>
-  <h3>Ítem Red Niñez · Presupuesto AIBOR ${S.year}</h3>${B?`<div class="kpi"><div class="note">Usado ${money(U)} de ${money(B)} (aportes recibidos + reembolsos por pedir)</div><div class="bar" style="margin-block:8px"><i class="${U>B?"over":""}" style="width:${Math.min(100,U/B*100).toFixed(1)}%"></i></div><b class="${B-U<0?"neg":""}">Disponible: ${money(B-U)}</b></div>`:`<div class="empty">Ingresa el presupuesto del año en Ajustes.</div>`}
+  const tots=as.map(a=>({a,t:actTotals(a.id)}));const P=tots.reduce((s,x)=>s+x.t.propios,0);
+  const sum=k=>tots.reduce((s,x)=>s+x.t[k],0);
+  return `<h2>Presupuesto AIBOR ${S.year}</h2>
+  ${B?`<div class="kpis"><div class="kpi"><div class="l">Asignado</div><div class="v">${money(B)}</div></div><div class="kpi"><div class="l">Usado</div><div class="v">${money(U)}</div></div><div class="kpi"><div class="l">Disponible</div><div class="v ${B-U<0?"neg":"pos"}">${money(B-U)}</div></div></div>
+  <div class="bar" style="margin-block:10px"><i class="${U>B?"over":""}" style="width:${Math.min(100,U/B*100).toFixed(1)}%"></i></div>
+  <div class="tbl-wrap"><table class="wrap"><thead><tr><th>Actividad</th><th class="n">Usado</th></tr></thead><tbody>
+   ${tots.filter(x=>x.t.usoAibor||x.t.aibor).map(({a,t})=>`<tr class="click" data-act="${esc(a.id)}"><td>${esc(a.nombre)}<span class="sub">${[t.aporte?"Aporte "+money(t.aporte):"",t.reemb?"Reembolso recibido "+money(t.reemb):"",t.pend?`<b class="neg">Por reembolsar ${money(t.pend)}</b>`:"",t.devolver?"Sobrante "+money(t.devolver):""].filter(Boolean).join(" · ")}</span></td><td class="n"><b>${money(t.usoAibor)}</b></td></tr>`).join("")||`<tr><td colspan="2">Sin uso del presupuesto aún</td></tr>`}
+   <tr><th style="color:var(--fg)">Total usado${sum("pend")?`<span class="sub" style="text-transform:none;letter-spacing:0">incluye ${money(sum("pend"))} por reembolsar</span>`:""}</th><th class="n" style="color:var(--fg)">${money(U)}</th></tr>
+  </tbody></table></div>
+  <p class="note">El presupuesto solo baja con lo que la AIBOR entrega (aportes) o devuelve (reembolsos, incluidos los que están por pedir). Las inscripciones y ofrendas no lo afectan: financian los gastos de su propia actividad.</p>`:`<div class="empty">Ingresa el presupuesto AIBOR del año en Ajustes, al final de esta página.</div>`}
+  <h2>Gastos e ingresos propios ${S.year}</h2><div class="kpis"><div class="kpi"><div class="l">Gastos del año</div><div class="v">${money(G)}</div></div><div class="kpi"><div class="l">Ingresos propios</div><div class="v pos">${money(P)}</div><div class="note">inscripciones, ofrendas</div></div><div class="kpi"><div class="l">Financiado por AIBOR</div><div class="v">${money(U)}</div></div></div>
   <h3>Reembolsos pendientes a personas</h3>${pe.length?`<div class="tbl-wrap"><table><thead><tr><th>Quién pagó</th><th class="n">Por reembolsar</th></tr></thead><tbody>${pe.sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<tr><td>${esc(k)}</td><td class="n">${money(v)}</td></tr>`).join("")}</tbody></table></div>`:`<p class="note">No hay gastos con plata propia pendientes de reembolso.</p>`}
   <h3>Gastos por mes</h3><div class="months">${byM.map((v,k)=>`<div title="${MESES[k]}: ${money(v)}"><i style="height:${(v/mx*80).toFixed(0)}px"></i><span>${MESES[k]}</span></div>`).join("")}</div>
   <h3>Por concepto</h3><div class="tbl-wrap"><table><thead><tr><th>Concepto</th><th class="n">Monto</th><th class="n">%</th></tr></thead><tbody>${Object.entries(byC).sort((a,b)=>b[1]-a[1]).map(([c,v])=>`<tr><td>${esc(c)}</td><td class="n">${money(v)}</td><td class="n">${G?(v/G*100).toFixed(1):0}%</td></tr>`).join("")||`<tr><td colspan="3">Sin gastos</td></tr>`}</tbody></table></div>
-  <h3>Por actividad</h3><div class="tbl-wrap"><table><thead><tr><th>Actividad</th><th>Estado</th><th class="n">Gastos</th><th class="n">Ingresos</th><th class="n">Saldo</th></tr></thead><tbody>${as.map(a=>{const t=actTotals(a.id);return`<tr class="click" data-act="${esc(a.id)}"><td>${esc(a.nombre)}</td><td>${esc(estadoTxt(a.estado))}</td><td class="n">${money(t.g)}</td><td class="n">${money(t.i)}</td><td class="n ${t.saldo<0?"neg":""}">${money(t.saldo)}</td></tr>`}).join("")||`<tr><td colspan="5">Sin actividades</td></tr>`}</tbody></table></div>
+  <h3>Por actividad</h3><div class="tbl-wrap"><table class="wrap"><thead><tr><th>Actividad</th><th>Estado</th><th class="n">Gastos</th><th class="n">Ingresos propios</th><th class="n">AIBOR</th><th class="n">Por reembolsar</th></tr></thead><tbody>${tots.map(({a,t})=>`<tr class="click" data-act="${esc(a.id)}"><td>${esc(a.nombre)}</td><td>${esc(estadoTxt(a.estado))}</td><td class="n">${money(t.g)}</td><td class="n">${money(t.propios)}</td><td class="n">${money(t.aibor)}</td><td class="n ${t.pend?"neg":""}">${money(t.pend)}</td></tr>`).join("")||`<tr><td colspan="6">Sin actividades</td></tr>`}</tbody></table></div>
   <h3>Respaldo del año</h3><p class="note">Genera el control del año en Excel dentro de la carpeta ${S.year} de Google Drive. Las fotos y rendiciones ya quedan guardadas ahí, ordenadas por actividad.</p>
   <div class="btns"><button class="btn navy" type="button" id="genC">Generar control ${S.year} (Excel)</button>${S.carpeta?`<a class="btn ghost" href="${esc(S.carpeta)}" target="_blank" rel="noopener">Abrir carpeta en Drive</a>`:""}</div><div id="genOut"></div>
-  <h3>Ajustes</h3><div class="kpi"><div class="grid2"><div class="field"><label for="cfgB">Presupuesto ítem Red ${S.year}</label><input id="cfgB" inputmode="numeric" value="${B||""}"></div><div class="field"><label for="cfgRed">Red / Comisión</label><input id="cfgRed" value="${esc(S.cfg.red||"")}"></div></div>
+  <h3>Ajustes</h3><div class="kpi"><div class="grid2"><div class="field"><label for="cfgB">Presupuesto AIBOR asignado ${S.year}</label><input id="cfgB" inputmode="numeric" value="${B||""}"></div><div class="field"><label for="cfgRed">Red / Comisión</label><input id="cfgRed" value="${esc(S.cfg.red||"")}"></div></div>
   <div class="field"><label for="cfgDir">Directivos (encabezado y firmas)</label><input id="cfgDir" value="${esc(S.cfg.directivo||"")}"></div>
   <div class="btns"><button class="btn primary" type="button" id="cfgSave">Guardar ajustes</button><button class="btn ghost" type="button" id="logout">Salir de este teléfono</button></div>
   <p class="note">La clave se cambia en la hoja "Config" de la planilla de registro.</p></div>`
